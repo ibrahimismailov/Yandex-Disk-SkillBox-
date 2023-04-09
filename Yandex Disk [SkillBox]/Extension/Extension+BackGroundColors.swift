@@ -7,7 +7,4 @@
 
 import Foundation
 
-class Colors {
-    static let backgroundColor = "buttonBackgroundColor"
-   // static let graphikExtralight = "GraphikExtralight"
-}
+

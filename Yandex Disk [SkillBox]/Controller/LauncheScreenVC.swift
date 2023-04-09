@@ -12,6 +12,7 @@ final class LauncheScreenVC: UIViewController {
     private lazy var iconImage = UIImageView()
     private lazy var skillBoxLabel = UILabel()
     private lazy var signInButton = UIButton()
+    
     var isAnimated: Bool = false
 
 }
@@ -34,7 +35,7 @@ extension LauncheScreenVC {
     }
     
     private func changeString() {
-        let string = Titles.skillboxDerive
+        let string = TitlesHelper.skillboxDerive
         let color = UIColor.black
         let size: CGFloat = 30
     
@@ -42,8 +43,8 @@ extension LauncheScreenVC {
             string: string,
             size: size,
             color: color,
-            graphikFontName: FontNames.graphikBlack,
-            tintFontName: FontNames.graphikExtralight,
+            graphikFontName: FontHelper.graphikBlack,
+            tintFontName: FontHelper.graphikExtralight,
             range1: (string as NSString).range(of: "Skillbox"),
             range2: (string as NSString).range(of: "Derive"))
         skillBoxLabel.attributedText = attributedString
@@ -58,7 +59,7 @@ extension LauncheScreenVC {
     private func makeUIElements() {
         
         iconImage.translatesAutoresizingMaskIntoConstraints = false
-        iconImage.image = UIImage(named: Images.circleOnboard)
+        iconImage.image = ImageHelper.circleOnboard
         
         skillBoxLabel.translatesAutoresizingMaskIntoConstraints = false
         skillBoxLabel.font = .systemFont(ofSize: 30, weight: .semibold)
@@ -66,10 +67,10 @@ extension LauncheScreenVC {
         skillBoxLabel.alpha = 0.0
 
         signInButton.translatesAutoresizingMaskIntoConstraints = false
-        signInButton.backgroundColor = UIColor(named: Colors.backgroundColor)
-        signInButton.setTitle(Titles.signIn, for: .normal)
+        signInButton.backgroundColor = UIColor(named: ColorHelper.backgroundColor)
+        signInButton.setTitle(TitlesHelper.signIn, for: .normal)
         signInButton.setTitleColor(.systemBackground, for: .normal)
-        signInButton.titleLabel?.font = UIFont(name: FontNames.graphikBlack, size: 16)
+        signInButton.titleLabel?.font = UIFont(name: FontHelper.graphikBlack, size: 16)
         signInButton.layer.cornerRadius = 10
         signInButton.alpha = 0.0
         signInButton.addTarget(self, action: #selector(tappedSignIn), for: .touchUpInside)
@@ -77,7 +78,7 @@ extension LauncheScreenVC {
     
     @objc private func tappedSignIn() {
         let rootVC = OnboardVC()
-        rootVC.navigationItem.hidesBackButton = true
+        rootVC.navigationItem.hidesBackButton = false
         rootVC.view.backgroundColor = .systemBackground
         navigationController?.pushViewController(rootVC, animated: true)
     }

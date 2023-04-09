@@ -8,7 +8,7 @@
 import UIKit
 
 class OnBoardingCollectionViewCell: UICollectionViewCell {
-    static let identifier = "OnBoardingCollectionViewCell"
+    static let identifier = CellIdentifier.OnBoardingCollectionViewCell
     private lazy var onboardingİmageView = UIImageView()
  //   private lazy var welcomeLabel = UILabel()
 
@@ -26,8 +26,6 @@ class OnBoardingCollectionViewCell: UICollectionViewCell {
 
         
        onboardingİmageView.translatesAutoresizingMaskIntoConstraints = false
-     //  onboardingİmageView.layer.masksToBounds = true
-     //  onboardingİmageView.clipsToBounds = true
        onboardingİmageView.image = UIImage(named: "circleOnboard")
         
 //        welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +47,7 @@ class OnBoardingCollectionViewCell: UICollectionViewCell {
 //            onboardingİmageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 50),
 //            onboardingİmageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -50),
             onboardingİmageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            onboardingİmageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            onboardingİmageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor,constant: -60),
             onboardingİmageView.heightAnchor.constraint(equalToConstant: 106),
             onboardingİmageView.widthAnchor.constraint(equalToConstant: 106),
             

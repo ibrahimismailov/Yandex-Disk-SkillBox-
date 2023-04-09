@@ -18,10 +18,12 @@
 		15FF40E529E2F18500AB5359 /* GraphikBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FF40E429E2F18500AB5359 /* GraphikBlack.otf */; };
 		15FF40E729E2F1A100AB5359 /* GraphikExtralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FF40E629E2F1A100AB5359 /* GraphikExtralight.otf */; };
 		15FF40E929E2F27800AB5359 /* Extension+NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF40E829E2F27800AB5359 /* Extension+NSAttributedString.swift */; };
-		15FF40EC29E2F39600AB5359 /* FontNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF40EB29E2F39600AB5359 /* FontNames.swift */; };
-		15FF40EE29E2F4CC00AB5359 /* Extension+ImagesNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF40ED29E2F4CC00AB5359 /* Extension+ImagesNames.swift */; };
-		15FF40F029E2F54300AB5359 /* Extension+Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF40EF29E2F54300AB5359 /* Extension+Titles.swift */; };
 		15FF40F229E2F5B100AB5359 /* Extension+BackGroundColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF40F129E2F5B100AB5359 /* Extension+BackGroundColors.swift */; };
+		15FF40F729E3040B00AB5359 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF40F629E3040B00AB5359 /* FontHelper.swift */; };
+		15FF40F929E3044400AB5359 /* TitlesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF40F829E3044400AB5359 /* TitlesHelper.swift */; };
+		15FF40FB29E3046F00AB5359 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF40FA29E3046F00AB5359 /* ImageHelper.swift */; };
+		15FF40FD29E304A700AB5359 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF40FC29E304A700AB5359 /* ColorHelper.swift */; };
+		15FF40FF29E307A600AB5359 /* CellIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF40FE29E307A600AB5359 /* CellIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,10 +40,12 @@
 		15FF40E429E2F18500AB5359 /* GraphikBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikBlack.otf; sourceTree = "<group>"; };
 		15FF40E629E2F1A100AB5359 /* GraphikExtralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikExtralight.otf; sourceTree = "<group>"; };
 		15FF40E829E2F27800AB5359 /* Extension+NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSAttributedString.swift"; sourceTree = "<group>"; };
-		15FF40EB29E2F39600AB5359 /* FontNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontNames.swift; sourceTree = "<group>"; };
-		15FF40ED29E2F4CC00AB5359 /* Extension+ImagesNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ImagesNames.swift"; sourceTree = "<group>"; };
-		15FF40EF29E2F54300AB5359 /* Extension+Titles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Titles.swift"; sourceTree = "<group>"; };
 		15FF40F129E2F5B100AB5359 /* Extension+BackGroundColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+BackGroundColors.swift"; sourceTree = "<group>"; };
+		15FF40F629E3040B00AB5359 /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
+		15FF40F829E3044400AB5359 /* TitlesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesHelper.swift; sourceTree = "<group>"; };
+		15FF40FA29E3046F00AB5359 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		15FF40FC29E304A700AB5359 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
+		15FF40FE29E307A600AB5359 /* CellIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellIdentifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		156631FF29D94ED700D75774 /* Yandex Disk [SkillBox] */ = {
 			isa = PBXGroup;
 			children = (
+				15FF40F529E303F600AB5359 /* Constans */,
 				15FF40E329E2F16900AB5359 /* Fonts */,
 				1566321429D94F1100D75774 /* App */,
 				1566321729D94F3300D75774 /* Extension */,
@@ -118,8 +123,6 @@
 			children = (
 				1566321A29D9568300D75774 /* Extension+UICollecctionView.swift */,
 				15FF40E829E2F27800AB5359 /* Extension+NSAttributedString.swift */,
-				15FF40ED29E2F4CC00AB5359 /* Extension+ImagesNames.swift */,
-				15FF40EF29E2F54300AB5359 /* Extension+Titles.swift */,
 				15FF40F129E2F5B100AB5359 /* Extension+BackGroundColors.swift */,
 			);
 			path = Extension;
@@ -143,19 +146,22 @@
 		15FF40E329E2F16900AB5359 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				15FF40EA29E2F38500AB5359 /* FontNames */,
 				15FF40E429E2F18500AB5359 /* GraphikBlack.otf */,
 				15FF40E629E2F1A100AB5359 /* GraphikExtralight.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		15FF40EA29E2F38500AB5359 /* FontNames */ = {
+		15FF40F529E303F600AB5359 /* Constans */ = {
 			isa = PBXGroup;
 			children = (
-				15FF40EB29E2F39600AB5359 /* FontNames.swift */,
+				15FF40F629E3040B00AB5359 /* FontHelper.swift */,
+				15FF40F829E3044400AB5359 /* TitlesHelper.swift */,
+				15FF40FA29E3046F00AB5359 /* ImageHelper.swift */,
+				15FF40FC29E304A700AB5359 /* ColorHelper.swift */,
+				15FF40FE29E307A600AB5359 /* CellIdentifier.swift */,
 			);
-			path = FontNames;
+			path = Constans;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,15 +238,17 @@
 			files = (
 				1566321B29D9568300D75774 /* Extension+UICollecctionView.swift in Sources */,
 				1566320529D94ED700D75774 /* LauncheScreenVC.swift in Sources */,
-				15FF40F029E2F54300AB5359 /* Extension+Titles.swift in Sources */,
-				15FF40EE29E2F4CC00AB5359 /* Extension+ImagesNames.swift in Sources */,
+				15FF40F929E3044400AB5359 /* TitlesHelper.swift in Sources */,
 				1566320129D94ED700D75774 /* AppDelegate.swift in Sources */,
 				1566321D29D9572600D75774 /* OnBoardingCollectionViewCell.swift in Sources */,
+				15FF40FF29E307A600AB5359 /* CellIdentifier.swift in Sources */,
+				15FF40F729E3040B00AB5359 /* FontHelper.swift in Sources */,
 				15FF40E929E2F27800AB5359 /* Extension+NSAttributedString.swift in Sources */,
-				15FF40EC29E2F39600AB5359 /* FontNames.swift in Sources */,
+				15FF40FD29E304A700AB5359 /* ColorHelper.swift in Sources */,
 				1566320329D94ED700D75774 /* SceneDelegate.swift in Sources */,
 				1566321F29DD7F9F00D75774 /* OnboardVC.swift in Sources */,
 				15FF40F229E2F5B100AB5359 /* Extension+BackGroundColors.swift in Sources */,
+				15FF40FB29E3046F00AB5359 /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
