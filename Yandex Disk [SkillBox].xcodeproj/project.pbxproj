@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		1566320129D94ED700D75774 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566320029D94ED700D75774 /* AppDelegate.swift */; };
 		1566320329D94ED700D75774 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566320229D94ED700D75774 /* SceneDelegate.swift */; };
-		1566320529D94ED700D75774 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566320429D94ED700D75774 /* OnBoardingVC.swift */; };
+		1566320529D94ED700D75774 /* LauncheScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566320429D94ED700D75774 /* LauncheScreenVC.swift */; };
 		1566320A29D94EDB00D75774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1566320929D94EDB00D75774 /* Assets.xcassets */; };
 		1566320D29D94EDB00D75774 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1566320B29D94EDB00D75774 /* LaunchScreen.storyboard */; };
 		1566321B29D9568300D75774 /* Extension+UICollecctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566321A29D9568300D75774 /* Extension+UICollecctionView.swift */; };
 		1566321D29D9572600D75774 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566321C29D9572600D75774 /* OnBoardingCollectionViewCell.swift */; };
-		1566321F29DD7F9F00D75774 /* OnboardFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566321E29DD7F9F00D75774 /* OnboardFirstVC.swift */; };
+		1566321F29DD7F9F00D75774 /* OnboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566321E29DD7F9F00D75774 /* OnboardVC.swift */; };
 		15FF40E529E2F18500AB5359 /* GraphikBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FF40E429E2F18500AB5359 /* GraphikBlack.otf */; };
 		15FF40E729E2F1A100AB5359 /* GraphikExtralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 15FF40E629E2F1A100AB5359 /* GraphikExtralight.otf */; };
 		15FF40E929E2F27800AB5359 /* Extension+NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF40E829E2F27800AB5359 /* Extension+NSAttributedString.swift */; };
@@ -28,13 +28,13 @@
 		156631FD29D94ED700D75774 /* Yandex Disk [SkillBox].app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yandex Disk [SkillBox].app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1566320029D94ED700D75774 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1566320229D94ED700D75774 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1566320429D94ED700D75774 /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
+		1566320429D94ED700D75774 /* LauncheScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncheScreenVC.swift; sourceTree = "<group>"; };
 		1566320929D94EDB00D75774 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1566320C29D94EDB00D75774 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1566320E29D94EDB00D75774 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1566321A29D9568300D75774 /* Extension+UICollecctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UICollecctionView.swift"; sourceTree = "<group>"; };
 		1566321C29D9572600D75774 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
-		1566321E29DD7F9F00D75774 /* OnboardFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardFirstVC.swift; sourceTree = "<group>"; };
+		1566321E29DD7F9F00D75774 /* OnboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardVC.swift; sourceTree = "<group>"; };
 		15FF40E429E2F18500AB5359 /* GraphikBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikBlack.otf; sourceTree = "<group>"; };
 		15FF40E629E2F1A100AB5359 /* GraphikExtralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikExtralight.otf; sourceTree = "<group>"; };
 		15FF40E829E2F27800AB5359 /* Extension+NSAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+NSAttributedString.swift"; sourceTree = "<group>"; };
@@ -98,8 +98,8 @@
 		1566321529D94F1A00D75774 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1566321E29DD7F9F00D75774 /* OnboardFirstVC.swift */,
-				1566320429D94ED700D75774 /* OnBoardingVC.swift */,
+				1566321E29DD7F9F00D75774 /* OnboardVC.swift */,
+				1566320429D94ED700D75774 /* LauncheScreenVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -231,7 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1566321B29D9568300D75774 /* Extension+UICollecctionView.swift in Sources */,
-				1566320529D94ED700D75774 /* OnBoardingVC.swift in Sources */,
+				1566320529D94ED700D75774 /* LauncheScreenVC.swift in Sources */,
 				15FF40F029E2F54300AB5359 /* Extension+Titles.swift in Sources */,
 				15FF40EE29E2F4CC00AB5359 /* Extension+ImagesNames.swift in Sources */,
 				1566320129D94ED700D75774 /* AppDelegate.swift in Sources */,
@@ -239,7 +239,7 @@
 				15FF40E929E2F27800AB5359 /* Extension+NSAttributedString.swift in Sources */,
 				15FF40EC29E2F39600AB5359 /* FontNames.swift in Sources */,
 				1566320329D94ED700D75774 /* SceneDelegate.swift in Sources */,
-				1566321F29DD7F9F00D75774 /* OnboardFirstVC.swift in Sources */,
+				1566321F29DD7F9F00D75774 /* OnboardVC.swift in Sources */,
 				15FF40F229E2F5B100AB5359 /* Extension+BackGroundColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

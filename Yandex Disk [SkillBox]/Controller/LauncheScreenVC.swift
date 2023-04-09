@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class OnBoardingVC: UIViewController {
+final class LauncheScreenVC: UIViewController {
     
     private lazy var iconImage = UIImageView()
     private lazy var skillBoxLabel = UILabel()
@@ -17,7 +17,7 @@ final class OnBoardingVC: UIViewController {
 }
 //MARK: - LifeCycle
 
-extension OnBoardingVC {
+extension LauncheScreenVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +30,6 @@ extension OnBoardingVC {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
             self.signInButton.alpha = 1
             self.skillBoxLabel.alpha = 1
-           
-            
         }
     }
     
@@ -50,8 +48,6 @@ extension OnBoardingVC {
             range2: (string as NSString).range(of: "Derive"))
         skillBoxLabel.attributedText = attributedString
     }
-    
-    
     
     private func addUIElements() {
         view.addSubview(signInButton)
@@ -77,14 +73,14 @@ extension OnBoardingVC {
         signInButton.layer.cornerRadius = 10
         signInButton.alpha = 0.0
         signInButton.addTarget(self, action: #selector(tappedSignIn), for: .touchUpInside)
-       
-       
-      
     }
+    
     @objc private func tappedSignIn() {
-        print("hello")
+        let rootVC = OnboardVC()
+        rootVC.navigationItem.hidesBackButton = true
+        rootVC.view.backgroundColor = .systemBackground
+        navigationController?.pushViewController(rootVC, animated: true)
     }
-
 
     func animateLauncheScreen() {
        UIView.animate(
@@ -110,7 +106,7 @@ extension OnBoardingVC {
 }
 //MARK: - Constraints
 
-extension OnBoardingVC {
+extension LauncheScreenVC {
     private func makeConstraints(){
         NSLayoutConstraint.activate([
             
@@ -123,7 +119,7 @@ extension OnBoardingVC {
             skillBoxLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             skillBoxLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            signInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -90),
+            signInButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -92),
             signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
             signInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
             signInButton.heightAnchor.constraint(equalToConstant: 50),

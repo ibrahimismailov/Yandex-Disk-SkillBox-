@@ -7,12 +7,13 @@
 
 import UIKit
 
-class OnboardFirstVC: UIViewController {
+class OnboardVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
-        // Do any additional setup after loading the view.
+        
     }
     
 
