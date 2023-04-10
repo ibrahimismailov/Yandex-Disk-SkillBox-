@@ -4,18 +4,17 @@
 //
 //  Created by Abraam on 05.04.2023.
 //
-
 import UIKit
 
 class OnboardVC: UIViewController {
-
+    // UI Elements
     private lazy var collectionView = UICollectionView.createCollectionView()
     private lazy var pageControll = UIPageControl()
     private lazy var nextButton = UIButton()
 
 }
 
-//MARK: - LifeCycle
+//MARK: - View Life Cycle
 extension OnboardVC {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +24,10 @@ extension OnboardVC {
     }
 }
 
-//MARK: - UIElements
+//MARK: - Add UIElements
 extension OnboardVC {
-    
     func addUIElements() {
         view.addSubview(collectionView)
-        collectionView.backgroundColor = .red
         view.addSubview(pageControll)
         view.addSubview(nextButton)
     }
@@ -38,7 +35,8 @@ extension OnboardVC {
     func makeUIElements() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(OnBoardingCollectionViewCell.self, forCellWithReuseIdentifier: OnBoardingCollectionViewCell.identifier)
+        collectionView.register(OnBoardingCollectionViewCell.self,
+        forCellWithReuseIdentifier: OnBoardingCollectionViewCell.identifier)
         
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         nextButton.backgroundColor = UIColor(named: ColorHelper.backgroundColor)
@@ -47,16 +45,11 @@ extension OnboardVC {
         nextButton.titleLabel?.font = UIFont(name: FontHelper.graphikBlack, size: 16)
         nextButton.layer.cornerRadius = 10
         
-
         pageControll.translatesAutoresizingMaskIntoConstraints = false
-        self.pageControll.currentPage = 0
+        pageControll.currentPage = 0
         pageControll.numberOfPages =  3
-  
-        self.pageControll.pageIndicatorTintColor = UIColor(named: ColorHelper.indicatorColor)
-        self.pageControll.currentPageIndicatorTintColor = UIColor(named: ColorHelper.backgroundColor)
-// set the color of the page indicator
-        
-
+        pageControll.pageIndicatorTintColor = UIColor(named: ColorHelper.indicatorColor)
+        pageControll.currentPageIndicatorTintColor = UIColor(named: ColorHelper.backgroundColor)
     }
     
 }
@@ -79,11 +72,11 @@ extension OnboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
 }
 
-//MARK: - NSLayoutConstraint
+//MARK: - UIElement+NSLayoutConstraint
 extension OnboardVC  {
     func makeConstraints() {
+        
         NSLayoutConstraint.activate([
-            
             nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -92),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
@@ -97,11 +90,6 @@ extension OnboardVC  {
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-          
-            
-            
-   
-        
         ])
     }
 }
