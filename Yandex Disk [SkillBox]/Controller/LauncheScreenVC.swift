@@ -6,6 +6,7 @@
 //
 
 import UIKit
+ 
 
 final class LauncheScreenVC: UIViewController {
     
@@ -78,8 +79,8 @@ extension LauncheScreenVC {
     
     @objc private func tappedSignIn() {
         let rootVC = OnboardVC()
-        rootVC.navigationItem.hidesBackButton = false
         rootVC.view.backgroundColor = .systemBackground
+        rootVC.navigationItem.hidesBackButton = true
         navigationController?.pushViewController(rootVC, animated: true)
     }
 

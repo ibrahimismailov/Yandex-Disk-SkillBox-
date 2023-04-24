@@ -1,95 +1,92 @@
-//
-//  OnboardFirstVC.swift
-//  Yandex Disk [SkillBox]
-//
-//  Created by Abraam on 05.04.2023.
-//
+
+
 import UIKit
 
-class OnboardVC: UIViewController {
-    // UI Elements
-    private lazy var collectionView = UICollectionView.createCollectionView()
+final class OnboardVC: UIViewController {
+    
+    private lazy var onboardImage = UIImageView()
+    private lazy var onboardLabel = UILabel()
+    private lazy var onboardButton = UIButton()
     private lazy var pageControll = UIPageControl()
-    private lazy var nextButton = UIButton()
-
-}
-
-//MARK: - View Life Cycle
-extension OnboardVC {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addUIElements()
-        makeUIElements()
-        makeConstraints()
+        makeViews()
+        makeViewsConstraints()
     }
 }
-
-//MARK: - Add UIElements
+//MARK: - Adding VIews OnboardVC
 extension OnboardVC {
-    func addUIElements() {
-        view.addSubview(collectionView)
+    private func makeViews() {
+        view.addSubview(onboardImage)
+        onboardImage.translatesAutoresizingMaskIntoConstraints = false
+        onboardImage.clipsToBounds = true
+        onboardImage.layer.masksToBounds = true
+        onboardImage.image = UIImage(named: TitlesHelper.onboardingImages[0])
+        
+        view.addSubview(onboardLabel)
+        onboardLabel.translatesAutoresizingMaskIntoConstraints = false
+        onboardLabel.numberOfLines = 0
+        onboardLabel.textAlignment = .center
+        onboardLabel.font = UIFont.init(name: FontHelper.graphikExtralight, size: 17)
+        onboardLabel.text = TitlesHelper.onboardingTexts[0]
+        
         view.addSubview(pageControll)
-        view.addSubview(nextButton)
-    }
-    
-    func makeUIElements() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(OnBoardingCollectionViewCell.self,
-        forCellWithReuseIdentifier: OnBoardingCollectionViewCell.identifier)
-        
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.backgroundColor = UIColor(named: ColorHelper.backgroundColor)
-        nextButton.setTitle(TitlesHelper.next, for: .normal)
-        nextButton.setTitleColor(.systemBackground, for: .normal)
-        nextButton.titleLabel?.font = UIFont(name: FontHelper.graphikBlack, size: 16)
-        nextButton.layer.cornerRadius = 10
-        
         pageControll.translatesAutoresizingMaskIntoConstraints = false
+        pageControll.numberOfPages = TitlesHelper.onboardingImages.count
         pageControll.currentPage = 0
-        pageControll.numberOfPages =  3
-        pageControll.pageIndicatorTintColor = UIColor(named: ColorHelper.indicatorColor)
-        pageControll.currentPageIndicatorTintColor = UIColor(named: ColorHelper.backgroundColor)
-    }
-    
-}
+        pageControll.currentPageIndicatorTintColor = .blue
+        pageControll.pageIndicatorTintColor = .systemGray4
+        pageControll.addTarget(self, action: #selector(pageControlValueChanged(_:)), for: .valueChanged)
 
-//MARK: - UICollectionViewDelegate,  UICollectionViewDataSource
-
-extension OnboardVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnBoardingCollectionViewCell.identifier, for: indexPath) as? OnBoardingCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 500)
-    }
-}
-
-//MARK: - UIElement+NSLayoutConstraint
-extension OnboardVC  {
-    func makeConstraints() {
         
+        view.addSubview(onboardButton)
+        onboardButton.translatesAutoresizingMaskIntoConstraints = false
+        onboardButton.backgroundColor = UIColor(named: ColorHelper.backgroundColor)
+        onboardButton.setTitle(TitlesHelper.next, for: .normal)
+        onboardButton.setTitleColor(.systemBackground, for: .normal)
+        onboardButton.titleLabel?.font = UIFont(name: FontHelper.graphikBlack, size: 16)
+        onboardButton.layer.cornerRadius = 10
+        onboardButton.addTarget(self, action: #selector(tappedSignIn), for: .touchUpInside)
+    }
+    
+    private func makeViewsConstraints() {
         NSLayoutConstraint.activate([
-            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -92),
-            nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
-            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
-            nextButton.heightAnchor.constraint(equalToConstant: 50),
+            onboardImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            onboardImage.centerYAnchor.constraint(equalTo: view.centerYAnchor,constant: -107),
             
-            pageControll.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -41),
-            pageControll.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            pageControll.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            onboardLabel.topAnchor.constraint(equalTo: onboardImage.bottomAnchor, constant: 64),
+            onboardLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 70),
+            onboardLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -71),
             
-            collectionView.bottomAnchor.constraint(equalTo: pageControll.topAnchor, constant: -10),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            pageControll.bottomAnchor.constraint(equalTo: onboardButton.topAnchor, constant: -42),
+            pageControll.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            onboardButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -92),
+            onboardButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
+            onboardButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
+            onboardButton.heightAnchor.constraint(equalToConstant: 50),
+         
         ])
     }
+    @objc private func tappedSignIn() {
+            let currentPage = pageControll.currentPage
+            if currentPage == TitlesHelper.onboardingImages.count - 1 {
+                let newVC = ViewControllerrr()
+                navigationController?.pushViewController(newVC, animated: true)
+            } else {
+                let nextPage = (currentPage + 1) % TitlesHelper.onboardingImages.count
+                onboardImage.image = UIImage(named: TitlesHelper.onboardingImages[nextPage])
+                onboardLabel.text = TitlesHelper.onboardingTexts[nextPage]
+                pageControll.currentPage = nextPage
+            }
+    }
+    @objc private func pageControlValueChanged(_ sender: UIPageControl) {
+        let selectedPage = sender.currentPage
+        onboardImage.image = UIImage(named: TitlesHelper.onboardingImages[selectedPage])
+        onboardLabel.text = TitlesHelper.onboardingTexts[selectedPage]
+        pageControll.currentPage = selectedPage
+    }
+
+
 }

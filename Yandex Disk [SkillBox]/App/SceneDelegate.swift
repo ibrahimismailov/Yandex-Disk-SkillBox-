@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         let openVC = LauncheScreenVC()
+        openVC.navigationItem.hidesBackButton = true
         
         let navigationVC = UINavigationController(rootViewController: openVC)
         window.rootViewController = navigationVC

@@ -1,0 +1,6 @@
+framework module Pods_Yandex_Disk__SkillBox_ {
+  umbrella header "Pods-Yandex Disk [SkillBox]-umbrella.h"
+
+  export *
+  module * { export * }
+}
