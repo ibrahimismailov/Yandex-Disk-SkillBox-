@@ -74,7 +74,8 @@ extension OnboardVC {
             let currentPage = pageControll.currentPage
             if currentPage == ImageHelper.onboardingImages.count - 1 {
                 let newVC = TabBarVC()
-                navigationController?.pushViewController(newVC, animated: true)
+                let navVC = UINavigationController(rootViewController: newVC)
+                self.present(navVC, animated: true)
             } else {
                 let nextPage = (currentPage + 1) % ImageHelper.onboardingImages.count
                 onboardImage.image = UIImage(named: ImageHelper.onboardingImages[nextPage])

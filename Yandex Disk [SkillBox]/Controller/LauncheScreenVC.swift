@@ -78,27 +78,31 @@ extension LauncheScreenVC {
     }
     
     @objc private func tappedSignIn() {
-    
+//
 //        let stat = SecItemDelete(KeychainManager.keychainQueryDelete as CFDictionary)
 //        if stat != errSecSuccess {
-//
-//            print("Error saving device ID to Keychain: \(stat)")
+//            let destination = TabBarVC()
+//            navigationController?.pushViewController(destination, animated: true)
 //        }
 //        else {
 //            print("deleted")
 //        }
-//
-//        let status = SecItemAdd(KeychainManager.keychainQuery as CFDictionary, nil)
-//
-//        if status != errSecSuccess {
-//            print("Error saving device ID to Keychain: \(status)")
-//        } else {
-//            print(status ,"")
+        
+
+        let status = SecItemAdd(KeychainManager.keychainQuery as CFDictionary, nil)
+
+        if status != errSecSuccess {
+            let destination = TabBarVC()
+            let navVC = UINavigationController(rootViewController: destination)
+            navVC.modalPresentationStyle = .fullScreen
+            present(navVC, animated: true)
+        } else {
+            print(status ,"")
             let rootVC = OnboardVC()
             rootVC.view.backgroundColor = .systemBackground
             rootVC.navigationItem.hidesBackButton = true
             navigationController?.pushViewController(rootVC, animated: true)
-       // }
+        }
 
     }
 
