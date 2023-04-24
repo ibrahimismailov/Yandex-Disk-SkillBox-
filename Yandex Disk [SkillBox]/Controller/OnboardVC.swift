@@ -15,6 +15,7 @@ final class OnboardVC: UIViewController {
         makeViewsConstraints()
     }
 }
+
 //MARK: - Adding VIews OnboardVC
 extension OnboardVC {
     private func makeViews() {
@@ -22,7 +23,7 @@ extension OnboardVC {
         onboardImage.translatesAutoresizingMaskIntoConstraints = false
         onboardImage.clipsToBounds = true
         onboardImage.layer.masksToBounds = true
-        onboardImage.image = UIImage(named: TitlesHelper.onboardingImages[0])
+        onboardImage.image = UIImage(named: ImageHelper.onboardingImages[0])
         
         view.addSubview(onboardLabel)
         onboardLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +34,7 @@ extension OnboardVC {
         
         view.addSubview(pageControll)
         pageControll.translatesAutoresizingMaskIntoConstraints = false
-        pageControll.numberOfPages = TitlesHelper.onboardingImages.count
+        pageControll.numberOfPages = ImageHelper.onboardingImages.count
         pageControll.currentPage = 0
         pageControll.currentPageIndicatorTintColor = .blue
         pageControll.pageIndicatorTintColor = .systemGray4
@@ -71,19 +72,19 @@ extension OnboardVC {
     }
     @objc private func tappedSignIn() {
             let currentPage = pageControll.currentPage
-            if currentPage == TitlesHelper.onboardingImages.count - 1 {
+            if currentPage == ImageHelper.onboardingImages.count - 1 {
                 let newVC = ViewControllerrr()
                 navigationController?.pushViewController(newVC, animated: true)
             } else {
-                let nextPage = (currentPage + 1) % TitlesHelper.onboardingImages.count
-                onboardImage.image = UIImage(named: TitlesHelper.onboardingImages[nextPage])
+                let nextPage = (currentPage + 1) % ImageHelper.onboardingImages.count
+                onboardImage.image = UIImage(named: ImageHelper.onboardingImages[nextPage])
                 onboardLabel.text = TitlesHelper.onboardingTexts[nextPage]
                 pageControll.currentPage = nextPage
             }
     }
     @objc private func pageControlValueChanged(_ sender: UIPageControl) {
         let selectedPage = sender.currentPage
-        onboardImage.image = UIImage(named: TitlesHelper.onboardingImages[selectedPage])
+        onboardImage.image = UIImage(named: ImageHelper.onboardingImages[selectedPage])
         onboardLabel.text = TitlesHelper.onboardingTexts[selectedPage]
         pageControll.currentPage = selectedPage
     }
