@@ -73,7 +73,7 @@ extension OnboardVC {
     @objc private func tappedSignIn() {
             let currentPage = pageControll.currentPage
             if currentPage == ImageHelper.onboardingImages.count - 1 {
-                let newVC = ViewControllerrr()
+                let newVC = TabBarVC()
                 navigationController?.pushViewController(newVC, animated: true)
             } else {
                 let nextPage = (currentPage + 1) % ImageHelper.onboardingImages.count

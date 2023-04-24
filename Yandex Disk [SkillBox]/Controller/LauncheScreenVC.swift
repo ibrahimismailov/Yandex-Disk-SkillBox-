@@ -6,7 +6,7 @@
 //
 
 import UIKit
- 
+ import Security
 
 final class LauncheScreenVC: UIViewController {
     
@@ -78,10 +78,28 @@ extension LauncheScreenVC {
     }
     
     @objc private func tappedSignIn() {
-        let rootVC = OnboardVC()
-        rootVC.view.backgroundColor = .systemBackground
-        rootVC.navigationItem.hidesBackButton = true
-        navigationController?.pushViewController(rootVC, animated: true)
+    
+//        let stat = SecItemDelete(KeychainManager.keychainQueryDelete as CFDictionary)
+//        if stat != errSecSuccess {
+//
+//            print("Error saving device ID to Keychain: \(stat)")
+//        }
+//        else {
+//            print("deleted")
+//        }
+//
+//        let status = SecItemAdd(KeychainManager.keychainQuery as CFDictionary, nil)
+//
+//        if status != errSecSuccess {
+//            print("Error saving device ID to Keychain: \(status)")
+//        } else {
+//            print(status ,"")
+            let rootVC = OnboardVC()
+            rootVC.view.backgroundColor = .systemBackground
+            rootVC.navigationItem.hidesBackButton = true
+            navigationController?.pushViewController(rootVC, animated: true)
+       // }
+
     }
 
     func animateLauncheScreen() {

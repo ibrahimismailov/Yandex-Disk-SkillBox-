@@ -1,0 +1,38 @@
+//
+//  TabBarVC.swift
+//  Yandex Disk [SkillBox]
+//
+//  Created by Abraam on 24.04.2023.
+//
+
+import UIKit
+import RAMAnimatedTabBarController
+
+class TabBarVC: RAMAnimatedTabBarController {
+    let selectedColor = ColorHelper.backgroundColor
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.hidesBackButton = true
+        let firstVC = ProfileVC()
+        let secVC =  ProductsVC()
+        let thirdVC = AllVC()
+        
+        firstVC.title = "Profile"
+        firstVC.view.backgroundColor = .systemBackground
+        firstVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: ImageHelper.profileIcon?.withRenderingMode(.alwaysTemplate), tag: 0)
+        (firstVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMFlipLeftTransitionItemAnimations()
+      
+        secVC.title = "Products"
+        secVC.view.backgroundColor = .systemBackground
+        secVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: ImageHelper.productIcon?.withRenderingMode(.alwaysTemplate), tag: 1)
+        (secVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMFlipLeftTransitionItemAnimations()
+        
+        thirdVC.title = "All Products"
+        thirdVC.view.backgroundColor = .systemBackground
+        thirdVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: ImageHelper.allIcon?.withRenderingMode(.alwaysTemplate), tag: 2)
+        (thirdVC.tabBarItem as? RAMAnimatedTabBarItem)?.animation = RAMFlipLeftTransitionItemAnimations()
+        
+        setViewControllers([firstVC, secVC, thirdVC],animated: false)
+    }
+    
+}

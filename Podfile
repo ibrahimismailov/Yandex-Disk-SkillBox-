@@ -7,7 +7,7 @@ target 'Yandex Disk [SkillBox]' do
 
   # Pods for Yandex Disk [SkillBox]
    pod 'DropDown'
-   pod 'SwiftyOnboard'
+   pod 'RAMAnimatedTabBarController'
 
 
 end
