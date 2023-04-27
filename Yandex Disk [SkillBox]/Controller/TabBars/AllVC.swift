@@ -11,7 +11,8 @@ class AllVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = "Все файлы"
+        
     }
    
 

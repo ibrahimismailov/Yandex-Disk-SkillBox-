@@ -55,6 +55,7 @@ extension LauncheScreenVC {
         view.addSubview(signInButton)
         view.addSubview(iconImage)
         view.addSubview(skillBoxLabel)
+        navigationItem.hidesBackButton = true
     }
     
     private func makeUIElements() {
@@ -78,32 +79,8 @@ extension LauncheScreenVC {
     }
     
     @objc private func tappedSignIn() {
-//
-//        let stat = SecItemDelete(KeychainManager.keychainQueryDelete as CFDictionary)
-//        if stat != errSecSuccess {
-//            let destination = TabBarVC()
-//            navigationController?.pushViewController(destination, animated: true)
-//        }
-//        else {
-//            print("deleted")
-//        }
-        
-
         let status = SecItemAdd(KeychainManager.keychainQuery as CFDictionary, nil)
-
-        if status != errSecSuccess {
-            let destination = TabBarVC()
-            let navVC = UINavigationController(rootViewController: destination)
-            navVC.modalPresentationStyle = .fullScreen
-            present(navVC, animated: true)
-        } else {
-            print(status ,"")
-            let rootVC = OnboardVC()
-            rootVC.view.backgroundColor = .systemBackground
-            rootVC.navigationItem.hidesBackButton = true
-            navigationController?.pushViewController(rootVC, animated: true)
-        }
-
+        handleKeychainStatus(status, successDestination: TabBarVC(), failureDestination: OnboardVC())
     }
 
     func animateLauncheScreen() {

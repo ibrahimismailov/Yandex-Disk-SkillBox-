@@ -13,6 +13,7 @@ final class OnboardVC: UIViewController {
         super.viewDidLoad()
         makeViews()
         makeViewsConstraints()
+        navigationItem.hidesBackButton = true
     }
 }
 
@@ -75,6 +76,7 @@ extension OnboardVC {
             if currentPage == ImageHelper.onboardingImages.count - 1 {
                 let newVC = TabBarVC()
                 let navVC = UINavigationController(rootViewController: newVC)
+                navVC.modalPresentationStyle = .fullScreen
                 self.present(navVC, animated: true)
             } else {
                 let nextPage = (currentPage + 1) % ImageHelper.onboardingImages.count

@@ -14,6 +14,7 @@
 		1566321B29D9568300D75774 /* Extension+UICollecctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566321A29D9568300D75774 /* Extension+UICollecctionView.swift */; };
 		1566321D29D9572600D75774 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566321C29D9572600D75774 /* OnBoardingCollectionViewCell.swift */; };
 		1566321F29DD7F9F00D75774 /* OnboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1566321E29DD7F9F00D75774 /* OnboardVC.swift */; };
+		156EF49729FA873A00C17E26 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156EF49629FA873A00C17E26 /* UIViewController+Extension.swift */; };
 		15F41C2829EF05FD003A38DC /* OnboarAnimateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F41C2729EF05FD003A38DC /* OnboarAnimateViewController.swift */; };
 		15F41C6B29F694E7003A38DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15F41C6A29F694E7003A38DC /* Assets.xcassets */; };
 		15F41C6E29F69EE5003A38DC /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F41C6D29F69EE5003A38DC /* Keychain.swift */; };
@@ -43,6 +44,7 @@
 		1566321A29D9568300D75774 /* Extension+UICollecctionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UICollecctionView.swift"; sourceTree = "<group>"; };
 		1566321C29D9572600D75774 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		1566321E29DD7F9F00D75774 /* OnboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardVC.swift; sourceTree = "<group>"; };
+		156EF49629FA873A00C17E26 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		15F41C2729EF05FD003A38DC /* OnboarAnimateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboarAnimateViewController.swift; sourceTree = "<group>"; };
 		15F41C6A29F694E7003A38DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15F41C6D29F69EE5003A38DC /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		156631FF29D94ED700D75774 /* Yandex Disk [SkillBox] */ = {
 			isa = PBXGroup;
 			children = (
+				156EF49529FA872200C17E26 /* Extensions */,
 				15F41C6C29F69ED3003A38DC /* Helper */,
 				15FF40F529E303F600AB5359 /* Constans */,
 				15FF40E329E2F16900AB5359 /* Fonts */,
@@ -163,6 +166,14 @@
 				1566321C29D9572600D75774 /* OnBoardingCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		156EF49529FA872200C17E26 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				156EF49629FA873A00C17E26 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		15F41C6C29F69ED3003A38DC /* Helper */ = {
@@ -346,6 +357,7 @@
 				15FF40FF29E307A600AB5359 /* CellIdentifier.swift in Sources */,
 				15FF40F729E3040B00AB5359 /* FontHelper.swift in Sources */,
 				15F41C2829EF05FD003A38DC /* OnboarAnimateViewController.swift in Sources */,
+				156EF49729FA873A00C17E26 /* UIViewController+Extension.swift in Sources */,
 				15F41C7529F6B618003A38DC /* ProductsVC.swift in Sources */,
 				15FF40E929E2F27800AB5359 /* Extension+NSAttributedString.swift in Sources */,
 				15FF40FD29E304A700AB5359 /* ColorHelper.swift in Sources */,

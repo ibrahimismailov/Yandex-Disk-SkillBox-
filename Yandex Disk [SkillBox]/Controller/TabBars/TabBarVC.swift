@@ -13,9 +13,9 @@ class TabBarVC: RAMAnimatedTabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        let firstVC = ProfileVC()
-        let secVC =  ProductsVC()
-        let thirdVC = AllVC()
+        let firstVC = UINavigationController(rootViewController: ProfileVC())
+        let secVC = UINavigationController(rootViewController: ProductsVC())
+        let thirdVC = UINavigationController(rootViewController: AllVC())
         
         firstVC.view.backgroundColor = .systemBackground
         firstVC.tabBarItem = RAMAnimatedTabBarItem(title: "", image: ImageHelper.profileIcon?.withRenderingMode(.alwaysTemplate), tag: 0)

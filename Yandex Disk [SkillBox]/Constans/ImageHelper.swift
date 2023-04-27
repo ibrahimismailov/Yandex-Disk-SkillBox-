@@ -13,5 +13,6 @@ class ImageHelper {
     static let profileIcon = UIImage(named: "profileicon")
     static let productIcon = UIImage(named: "producticon")
     static let allIcon = UIImage(named: "allicon")
+    static let ellipsis = UIImage(systemName: "ellipsis")!
    // static let graphikExtralight = "GraphikExtralight"
 }
