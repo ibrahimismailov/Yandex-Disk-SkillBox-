@@ -13,7 +13,7 @@ final class OnboardVC: UIViewController {
         super.viewDidLoad()
         makeViews()
         makeViewsConstraints()
-        navigationItem.hidesBackButton = true
+        hideBackButton()
     }
 }
 

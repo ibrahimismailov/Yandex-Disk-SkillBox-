@@ -55,7 +55,7 @@ extension LauncheScreenVC {
         view.addSubview(signInButton)
         view.addSubview(iconImage)
         view.addSubview(skillBoxLabel)
-        navigationItem.hidesBackButton = true
+        hideBackButton()
     }
     
     private func makeUIElements() {

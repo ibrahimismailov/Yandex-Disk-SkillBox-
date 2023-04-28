@@ -41,4 +41,18 @@ extension UIViewController {
                navigationController?.pushViewController(rootVC, animated: true)
            }
        }
-}
+    func hideBackButton() {
+          navigationItem.hidesBackButton = true
+      }
+ 
+   }
+
+
+
+
+
+
+
+
+    
+
